@@ -1,0 +1,21 @@
+# .github/workflows/python-app.yml
+name: Python application
+
+on: [push]  # This triggers the workflow when you push changes
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  # The environment where the code will run
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3  # Checks out your code from GitHub
+
+    - name: Set up Python
+      uses: actions/setup-python@v3
+      with:
+        python-version: '3.x'  # Specifies the Python version to use
+
+    - name: Run Python script
+      run: |
+        python app.py  # This runs the app.py file in your repository
